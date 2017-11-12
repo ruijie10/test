@@ -1,0 +1,51 @@
+
+
+body{background-color:#DAF7A6;
+    color:#DAF7A6;
+    font-family: 'Raleway', sans-serif;
+  font-weight:400;
+}
+.div1{
+   background-color:#FDFEFE  ;
+   
+    width:500px;
+     height:400px;
+     position: absolute;
+     top: 160px;
+     right: 450px;
+      padding:1.5cm; 
+     }
+    .div2{
+        text-align:center;
+        float:left;
+        width:50px;
+     height:40px;
+     
+    }
+    .div3{
+        text-align:center;
+        float:left;
+        width:50px;
+     height:40px;
+    
+    }
+    .div4{
+float:right;
+width:100px;
+     height:150px;
+ }
+.div5{
+  height:270px;
+}
+.hh{
+text-align:center;
+font-size: 30px;
+ 
+
+}
+.bb{
+height: 50px;
+width: 130px;
+background-color:#DAF7A6;
+
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Examples</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link href="" rel="stylesheet">
+	<style>
+		#board {
+			border: 1px solid black;
+			width: 1400px;
+			height: 500px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		#i-box {
+			display: block;
+			width: 400px;
+			height: 50px;
+			border: 2px solid blue;
+			margin: 0 auto;
+		}
+
+		#launch {
+			width: 150px;
+			height: 30px;
+			border: 1px solid red;
+			color: red;
+			background-color: white;
+		}
+
+		#clear {
+			width: 150px;
+			height: 30px;
+			border: 1px solid black;
+			background-color: white;
+		}
+
+		button {
+			margin-top: 30px;
+		}
+
+		@keyframes move {
+			from {
+				right: 0;
+			}
+			to {
+				right: 100%;
+			}
+		}
+
+		.div3 {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="board"></div>
+	<input placeholder="说点什么?" type="text" id="i-box">
+	<div class="div3">
+		<button id="launch">发射</button>
+		<button id="clear">清屏</button>
+	</div>
+	<script>
+		var board = document.querySelector('#board');
+		var launch = document.querySelector('#launch');
+		var clear = document.querySelector('#clear');
+		var text = document.querySelector('#i-box');
+
+		// 随机色
+		function c() {
+			var r = parseInt(Math.random() * 255);
+			var g = parseInt(Math.random() * 255);
+			var b = parseInt(Math.random() * 255);
+			return "rgb(" + r + "," + g + "," + b + ")"
+		}
+
+		// 随机top
+		function t() {
+			return Math.random() * 750 + 'px';
+		}
+
+		// 动画animation属性填写
+		function rand() {
+			return 'move' + ' ' + (parseInt(Math.random() * 10 + 15)) + 's' + ' ' + 'infinite' + ' ' + 'ease';
+		}
+
+		// 绑定事件到发射按钮，创建一个p元素，并给他添加样式
+		launch.addEventListener('click', function () {
+			var barrage = document.createElement('p');
+			barrage.innerText = text.value;
+			barrage.style.color = c();                           // 添加随机色
+			barrage.style.position = 'absolute';                 // 让弹幕p元素脱离文档流
+			barrage.style.top = t();                             // 添加随机top
+			barrage.style.animation = rand();                    // 添加动画属性
+			barrage.style.whiteSpace = 'nowrap';                 // 不换行
+			text.value = '';
+			board.appendChild(barrage);
+		})
+
+		// 绑定事件给清理按钮
+		clear.addEventListener('click', function () {
+			board.innerHTML = '';
+		})
+	</script>
+</body>
+
+</html>
