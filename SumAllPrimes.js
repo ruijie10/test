@@ -21,9 +21,9 @@ function sumPrimes(num) {
   }
 
   // Add the primes
-  var primes = getPrimes(num);
-  for (var p = 0; p < primes.length; p++) {
-    res += primes[p];
+  var abc = getPrimes(num);
+  for (var p = 0; p < abc.length; p++) {
+    res += abc[p];
   }
 
   return res;
