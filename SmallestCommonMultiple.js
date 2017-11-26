@@ -10,7 +10,7 @@ function smallestCommons(arr) {
     var bei = [];
     var gongbei = [];
     var ax = 0;
-
+    var zuixiao
     arr.sort(function (a, b) {
         return a - b;
     });
@@ -41,7 +41,7 @@ function smallestCommons(arr) {
 
         if (beishu(bei) === newarr.length) {
             gongbei.push(bei[b]);
-            var zuixiao = gongbei[0];
+            zuixiao = gongbei[0];
         }
 
     }
