@@ -9,7 +9,7 @@ function smallestCommons(arr) {
     var newarr = [];
     var bei = [];
     var gongbei = [];
-    var ax = 0;
+    var ax=0;
     var zuixiao
     arr.sort(function (a, b) {
         return a - b;
@@ -23,23 +23,23 @@ function smallestCommons(arr) {
 
         bei.push(j);
     }
-    function beishu(bei) {
+    function beishu(bei,x,arr) {
         for (var a = 0; a < newarr.length; a++) {
 
-            if (bei[b] % newarr[a] == 0) {
-                ax++;
+            if (bei % arr[a] == 0) {
+                x++;
             } else {
-                ax = 0;
+                x = 0;
                 break;
 
             }
         }
-        return ax;
+        return x;
     }
 
     for (var b = 0; b < bei.length; b++) {
 
-        if (beishu(bei) === newarr.length) {
+        if (beishu(bei[b],ax,newarr) === newarr.length) {
             gongbei.push(bei[b]);
             zuixiao = gongbei[0];
         }
