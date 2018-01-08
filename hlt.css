@@ -7,7 +7,7 @@
                     background-color:rgb(17, 223, 161);
 				}		
 
-				.tableCell {
+.tableCell {
 					display: table-cell;
 					vertical-align: middle;
 					text-align: center;			
@@ -16,8 +16,34 @@
 					*top: 50%;
 					*left: 50%;
 				}
-				.content {
+.content {
 					*position:relative;
 					*top: -50%;
 					*left: -50%;
+					
 				}
+.level{
+	display: none;
+}
+.hlt{
+	display: none;
+}
+.hlta{
+	background-color:#6495ED;
+	width:250px;
+	height:200px;
+	float: left;
+	
+}
+.hltb{
+	background-color:rgb(190, 149, 36);
+	width:250px;
+	height:200px;
+	float: left;
+}
+.hltc{
+	background-color:rgb(59, 22, 228);
+	width:250px;
+	height:200px;
+	float: left;
+}
