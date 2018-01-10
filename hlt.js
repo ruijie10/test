@@ -7,14 +7,14 @@ $(document).ready(function () {
     $(".next").click(function () {
         $(".wancheng").hide();
         $("#guanka").show();
-        i=1;
+        
     });
     $("#determine").click(function () {
         var n = $("#text").find("option:selected").text();
         $("#guanka").hide();
-        
+        $("#hltshow").show();
         for (var i = 1; i <= n; i++) {
-            $("#hltshow").show();
+            
             $("#" + i + "a").show();
             s = $(".hlta").children("button:visible").text();
         }
