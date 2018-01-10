@@ -7,14 +7,15 @@ $(document).ready(function () {
     $(".next").click(function () {
         $(".wancheng").hide();
         $("#guanka").show();
-        
+
     });
     $("#determine").click(function () {
         var n = $("#text").find("option:selected").text();
         $("#guanka").hide();
         $("#hltshow").show();
+
         for (var i = 1; i <= n; i++) {
-            
+
             $("#" + i + "a").show();
             s = $(".hlta").children("button:visible").text();
         }
@@ -32,6 +33,7 @@ $(document).ready(function () {
     var m;//当前选择的 button 的 text；
     var s;//a 柱全部显示的 button；
     var s1;//c柱全部显示的 button；
+    var s2;
     $(".zhuzi").click(function () {
 
         w = $(this).children("h3").text()
@@ -41,7 +43,8 @@ $(document).ready(function () {
             d = 0;
             x = 0;
             flg = 1;
-        } else {
+        }
+        else {
             z = w;
         }
 
@@ -53,7 +56,8 @@ $(document).ready(function () {
                 x = $(this).children("button:visible").first().text();
                 flg = 0;
                 f = 3;
-            } else {
+            }
+            else {
                 f = 2;
             }
 
@@ -64,13 +68,16 @@ $(document).ready(function () {
                 y = $(this).children("h3").text()
                 $("#" + x + y).show();
                 s1 = $(this).children("button:visible").text();
+                s2 = $(".hltc").children("button:visible").text();
                 flg = 1;
                 f = 2;
-                if (s == s1) {
-                    $(".zhuzi").hide();
+                if (s == s2) {
+                    $(".aa").hide();
+                    $("#hltshow").hide();
                     $(".wancheng").show();
                 }
-            } else {
+            }
+            else {
                 $("button").css("border-color", "black");
                 flg = 1;
                 f = 2;
