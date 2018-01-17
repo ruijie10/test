@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>小球动画</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        canvas {
+            display: block;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <canvas id="myCanvas"></canvas>
+
+    <script type="text/javascript">
+        //1，获取 canvas元素
+        var canvas = document.getElementById('myCanvas');
+        //获取窗口大小，
+        var w = window.innerWidth;//获取窗口宽度。
+        var h = window.innerHeight;//获取窗口高度；
+        //设置 canvas 元素大小。
+        canvas.width = w;
+        canvas.height = h;
+        window.onresize = function () {//窗口发生变化 canvas 随着变化；
+            //获取窗口大小，
+            w = window.innerWidth;//获取窗口宽度。
+            h = window.innerHeight;//获取窗口高度；
+            //设置 canvas 元素大小。
+            canvas.width = w;
+            canvas.height = h;
+        }
+
+    </script>
+
+</body>
+
+</html>
