@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>小球动画</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        canvas {
+            display: block;
+            /* background-color: red;*/
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <canvas id="myCanvas"></canvas>
+
+    <script type="text/javascript">
+        //1，获取 canvas元素
+        var canvas = document.getElementById('myCanvas');
+        //获取窗口大小，
+        var w = window.innerWidth;//获取窗口宽度。
+        var h = window.innerHeight;//获取窗口高度；
+        //设置 canvas 元素大小。
+        canvas.width = w;
+        canvas.height = h;
+        window.onresize = function () {//窗口发生变化 canvas 随着变化；
+            //获取窗口大小，
+            w = window.innerWidth;//获取窗口宽度。
+            h = window.innerHeight;//获取窗口高度；
+            //设置 canvas 元素大小。
+            canvas.width = w;
+            canvas.height = h;
+        }
+        var canCon = canvas.getContext("2d");
+
+        function Bubble() { };
+        function random(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+        var aColor = ["#fee388", "#2e68aa", "#e008031", "#f01b2d"];
+        Bubble.prototype = {
+            init: function () {
+                this.x = random(0, w);
+                this.y = random(0, h);
+                this.r = random(2, 4);
+                this.color = aColor[Math.floor(random(0, 4))];
+                this.xr = random(-1, 1);
+                this.yr = random(-1, 1);
+            },
+            draw: function () {
+                canCon.beginPath();
+                canCon.fillStyle = this.color;
+                canCon.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                canCon.fill();
+            },
+            move: function () {
+                this.x += this.xr;
+                this.y += this.yr;
+                if (this.x - this.r < 0 || this.x+ this.r > w) {
+                    this.xr = -this.xr;
+                }
+                if (this.y - this.r < 0 || this.y + this.r > h) {
+                    this.yr = -this.yr;
+                }
+                this.draw();
+            }
+        }
+        var bubbleArry = [];
+        function create() {
+            var bubble = new Bubble();
+            bubble.init();
+            bubble.draw();
+            bubbleArry.push(bubble);
+
+        }
+        for (var i = 0; i < 666; i++) {
+            create();
+        }
+        setInterval(function () {
+            canCon.clearRect(0, 0, w, h);
+            for (var item of bubbleArry) {
+                item.move();
+            }
+        }, 1000 / 60)
+        var pY, pX;
+
+    </script>
+
+</body>
+
+</html>
