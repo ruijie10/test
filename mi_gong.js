@@ -21,7 +21,7 @@ function maze(map, x, y, n) {
     }
 
     for (var i = 0; i < room.length; i++) {
-        // 选择出口。
+        // 选择一个出口。
         if (room[i] == 1) {
             // 路径保存在 way 中。
             way.push([x, y]);
@@ -39,27 +39,32 @@ function maze(map, x, y, n) {
             else if (i == 2) {
                 y = y + 1;
             }
+            // 右下
             else if (i == 3) {
                 x = x + 1;
                 y = y + 1;
             }
+            // 下
             else if (i == 4) {
                 x = x + 1;
             }
+            // 左下
             else if (i == 5) {
                 x = x + 1;
                 y = y - 1;
             }
+            // 左
             else if (i == 6) {
                 y = y - 1;
             }
+            // 左上
             else if (i == 7) {
                 x = x - 1;
                 y = y - 1;
             }
             // way 中数组转换为字符串。
             for (var j = 0; j < way.length; j++) {
-                
+
                 arr.push(way[j].join(""));
             }
             // 下一个坐标转换成字符串
@@ -77,7 +82,7 @@ function maze(map, x, y, n) {
             }
 
             if (repeat == 0) {
-                maze(map, x , y , n);
+                maze(map, x, y, n);
             }
             // 寻找下个出口 清除 way 最后的一个坐标
             way.pop();
