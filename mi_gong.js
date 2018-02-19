@@ -26,13 +26,16 @@ function maze(map, x, y, n) {
             // 路径保存在 way 中。
             way.push([x, y]);
             // 判断行走方向。
+            // 上
             if (i == 0) {
                 x = x - 1;
             }
+            // 右上
             else if (i == 1) {
                 x = x - 1;
                 y = y + 1;
             }
+            // 右
             else if (i == 2) {
                 y = y + 1;
             }
