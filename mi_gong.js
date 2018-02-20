@@ -103,7 +103,7 @@ function find_way(map) {
     }
 
 
-    maze(map, 0, 0, 2, 0);
+    maze(map, 0, 0, 2, 2);
     return way;
 }
 find_way(map)
