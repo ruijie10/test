@@ -4,6 +4,7 @@ function permAlone(str) {
     var newarr = [];
 
     var a = 0;
+    // 标记
     for (i = 0; i < arr.length; i++) {
         arr_flag[i] = true;
     }
