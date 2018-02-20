@@ -4,18 +4,24 @@ var map = [
     ['00101000', '01101010', '10000010'],
     ['10000000', '10100000', '00000011']
 ]
+// var map = [
+//     ["00100000", "00000010"],
+//     ["00100000", "00000010"]
+// ]
 function find_way(map) {
-    var w,
-        m,
-        arr = [],
-        a,
-        b;
     var way = [];
-    var repeat = 0;
-    var map_flag = [];
-    var map_fla = [];
-
+    var new_way = [];
+    var flag = 0;
+    var way2 = [];
     function maze(map, x, y, x2, y2) {
+        var x1,
+            y1;
+        var a,
+            b;
+        var w,
+            m;
+        var arr = [];
+        var repeat = 0;
         var room = map[x][y].split("");
         a = x;
         b = y;
@@ -71,7 +77,6 @@ function find_way(map) {
                     y1 = y - 1;
                 }
                 // way 中数组转换为字符串。
-                arr = [];
                 for (var j = 0; j < way.length; j++) {
                     arr.push(way[j].join(""));
                 }
@@ -92,7 +97,10 @@ function find_way(map) {
                     maze(map, x1, y1, x2, y2);
                 }
                 // 寻找下个出口 清除 way 最后的一个坐标
-                if (x1 == x2 && y1 == y2) {
+                if (x1 == x2 && y1 == y2 && flag == 0) {
+                    new_way = way;
+                    flag = 1;
+                    way = [];
                     return;
                 } else {
                     way.pop();
@@ -102,11 +110,13 @@ function find_way(map) {
         }
     }
     maze(map, 0, 0, 2, 2);
-    for (var i = 0; i < way.length - 1; i++) {
-        console.log(way[i] + "-->" + way[i + 1])
+
+    for (var i = 0; i < new_way.length; i++) {
+        way2.push(new_way[i].join(","))
     }
-    // return way;
+    console.log(way2.join(" --> "))
 }
 find_way(map)
 
-// console.log("way:", find_way(map))
+
+
