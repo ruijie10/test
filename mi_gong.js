@@ -101,12 +101,12 @@ function find_way(map) {
             }
         }
     }
-
-
     maze(map, 0, 0, 2, 2);
-    return way;
+    for (var i = 0; i < way.length - 1; i++) {
+        console.log(way[i] + "-->" + way[i + 1])
+    }
+    // return way;
 }
 find_way(map)
 
-
-
+// console.log("way:", find_way(map))
