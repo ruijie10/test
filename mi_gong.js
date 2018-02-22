@@ -10,29 +10,19 @@ var map = [
 // ]
 function find_way(map) {
     var way = [];
-    var new_way = [];
     var flag = 0;
     var way2 = [];
     function maze(map, x, y, x2, y2) {
         var x1,
             y1;
-        var a,
-            b;
         var w,
             m;
         var arr = [];
         var repeat = 0;
         var room = map[x][y].split("");
-        a = x;
-        b = y;
-        // 判断是否到终点。
-        if (a == x2 && b == y2) {
-            way.push([x, y]);
-            return;
-        }
         for (var i = 0; i < room.length; i++) {
             // 选择一个出口。
-            if (room[i] == 1) {
+            if (room[i] == 1 && flag == 0) {
                 // 路径保存在 way 中。
                 way.push([x, y]);
                 // 判断行走方向。
@@ -96,13 +86,12 @@ function find_way(map) {
                 if (repeat == 0) {
                     maze(map, x1, y1, x2, y2);
                 }
-                // 寻找下个出口 清除 way 最后的一个坐标
+                // 找到终端，得到的路径存放到new_way.
                 if (x1 == x2 && y1 == y2 && flag == 0) {
-                    new_way = way;
                     flag = 1;
-                    way = [];
-                    return;
-                } else {
+                }
+                else if (flag == 0) {
+                    // 寻找下个出口 清除 way 最后的一个坐标
                     way.pop();
                     repeat = 0;
                 }
@@ -110,11 +99,10 @@ function find_way(map) {
         }
     }
     maze(map, 0, 0, 2, 2);
-
-    for (var i = 0; i < new_way.length; i++) {
-        way2.push(new_way[i].join(","))
+    for (var i = 0; i < way.length; i++) {
+        way2.push(way[i].join(","))
     }
-    console.log(way2.join(" --> "))
+    console.log(way2.join(") --> ("))
 }
 find_way(map)
 
