@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function generate_map(n, m) {
+            var map = new Array();
+            for (var i = 0; i <= n; i++) {
+                map[i] = new Array();
+                for (var j = 0; j <= m; j++) {
+                    if (i > 0 && i < n) {
+                        map[i][j] = "10001000";
+                    }
+                    else if (i == 0 && j == 0) {
+                        map[i][j] = "00001000";
+                    }
+                    else if (i == 0 && j == m) {
+                        map[i][j] = "00001010";
+                    }
+                    else if (i == n && j == 0) {
+                        map[i][j] = "10100000";
+                    }
+                    else if (i == n && j == m) {
+                        map[i][j] = "10000000";
+                    }
+                    else if (i == 0 && j != 0 && j != m && j % 2 != 0) {
+                        map[i][j] = "00101000";
+                    }
+                    else if (i == 0 && j != 0 && j != m && j % 2 == 0) {
+                        map[i][j] = "00001010";
+                    }
+                    else if (i == n && j != 0 && j != m && j % 2 != 0) {
+                        map[i][j] = "10000010";
+                    }
+                    else if (i == n && j != 0 && j != m && j % 2 == 0) {
+                        map[i][j] = "10100000";
+                    }
+                }
+            }
+            document.write("map = [ <br>");
+            for (var k = 0; k < map.length; k++) {
+                // console.log(map[i])
+                document.write("[");
+                for (var a = 0; a < map[k].length; a++) {
+                   
+                    document.write("'" + map[k][a] + "'"+",");
+                }
+                document.write("],");
+                document.write("<br>");
+              
+            }
+            document.write("]");
+            return map;
+        }
+        generate_map(10, 10)
+    </script>
+
+</head>
+
+<body>
+
+    <div class="map"></div>
+</body>
+
+</html>
