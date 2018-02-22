@@ -20,12 +20,9 @@ function permAlone(str) {
                 temp_arr.pop()  //删掉arr[i]
                 arr_flag[i] = true
             }
-
         }
     }
     create_attr(0, []);
-
-
     return a;
 }
 
