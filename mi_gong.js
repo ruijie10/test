@@ -69,7 +69,7 @@ function find_way(map) {
         }
         for (var i = 0; i < room.length; i++) {
             // 选择一个出口。
-            if (room[i] == 1 && flag == 0 && flag_map[x][y]) {
+            if (room[i] == 1 && flag == 0 ) {
                 // 路径保存在 way 中。
                 way.push([x, y]);
                 flag_map[x][y] = false;
@@ -125,7 +125,7 @@ function find_way(map) {
             }
         }
     }
-    maze(map, 0, 0, 10, 10);
+    maze(map, 0, 0, 2, 2);
     for (var i = 0; i < way.length; i++) {
         way2.push(way[i].join(","))
     }
