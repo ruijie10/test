@@ -14,7 +14,7 @@ function find_way(map, x, y, x2, y2) {
         var x1,
             y1;
         var room = map[x][y].split("");
-        if (x == x2 && y == y2 && flag == 0) {
+        if (x == x2 && y == y2) {
             way.push([x, y]);
             flag = 1;
             return;
@@ -68,12 +68,14 @@ function find_way(map, x, y, x2, y2) {
                 }
                 if (flag_map[x1][y1]) {
                     maze(map, x1, y1, x2, y2);
+                    if (flag == 1) {
+                        return;
+                    }
                 }
-                if (flag == 0) {
-                    // 寻找下个出口 清除 way 最后的一个坐标
-                    way.pop();
-                    flag_map[x][y] = true;
-                }
+                // 寻找下个出口 清除 way 最后的一个坐标
+                way.pop();
+                flag_map[x][y] = true;
+
             }
         }
     }
