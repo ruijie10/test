@@ -1,5 +1,5 @@
 var generate_map = require('./generate_map');
-function find_way(map) {
+function find_way(map, x, y, x2, y2) {
     var way = [];
     var flag = 0;
     var way2 = [];
@@ -17,6 +17,7 @@ function find_way(map) {
         if (x == x2 && y == y2 && flag == 0) {
             way.push([x, y]);
             flag = 1;
+            return;
         }
         for (var i = 0; i < room.length; i++) {
             // 选择一个出口。
@@ -76,15 +77,27 @@ function find_way(map) {
             }
         }
     }
-    maze(map, 0, 0, 10, 10);
+    maze(map, x, y, x2, y2);
     for (var i = 0; i < way.length; i++) {
         way2.push(way[i].join(","))
     }
     console.log("(" + way2.join(") -> (") + ")")
 }
-console.time("map1")
-find_way(generate_map(10, 10));
-console.timeEnd("map1");
+// console.time("map1")
+// find_way(generate_map(10, 10), 0, 0, 10, 10);
+// console.timeEnd("map1");
+// console.log('\n')
+// console.time("map2")
+// find_way(generate_map(100, 100), 0, 0, 100, 100);
+// console.timeEnd("map2");
+// console.log('\n')
+// console.time("map3")
+// find_way(generate_map(1000, 2000), 0, 0, 1000, 1000);
+// console.timeEnd("map3");
+// console.log('\n')
+console.time("map3")
+find_way(generate_map(3, 3), 0, 0, 3, 3);
+console.timeEnd("map3");
 console.log('\n')
 
 

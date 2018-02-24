@@ -32,12 +32,6 @@ function generate_map(n, m) {
             }
         }
     }
-
-
     return map;
-
-
 }
-
-// generate_map(10, 10)
 module.exports = generate_map;
