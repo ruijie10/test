@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>createTable2.html</title>
+    <style type="text/css">
+        table {
+            border: #00ffff solid 2px;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: #8080ff solid 2px;
+            padding: 10px;
+        }
+    </style>
+    <script type="text/javascript">  
+        var tableNode;
+        function createTable() {
+            tableNode = document.createElement("table");//获得对象  
+            var row = parseInt(document.getElementsByName("row1")[0].value);//获得行号  
+            alert(row);  
+            if (row <= 0 || isNaN(row)) {
+                alert("输入的行号错误，不能创建表格，请重新输入：");
+                return;
+            }
+            var cols = parseInt(document.getElementsByName("cols1")[0].value);
+            if (isNaN(cols) || cols <= 0) {
+                alert("输入的列号错误，不能创建表格，请重新输入：");
+                return;
+            }
+            //上面确定了 现在开始创建  
+            for (var x = 0; x < row; x++) {
+                var trNode = tableNode.insertRow();
+                for (var y = 0; y < cols; y++) {
+                    var tdNode = trNode.insertCell();
+                    // tdNode.innerHTML = "单元格" + (x + 1) + "-" + (y + 1);
+                }
+            }
+            document.getElementById("div1").appendChild(tableNode);//添加到那个位置  
+        }
+    </script>
+</head>
+
+<body>
+    行:
+    <input type="text" name="row1" /> 列:
+    <input type="text" name="cols1" />
+    <input type="button" value="创建表格" onclick="createTable()" />
+    <br/>
+    <div id="div1"></div>
+</body>
+
+</html>
