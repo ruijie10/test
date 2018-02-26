@@ -40,11 +40,12 @@
                 var trNode = tableNode.insertRow();
                 for (var y = 0; y <= cols; y++) {
                     var tdNode = trNode.insertCell();
-                    // tdNode.innerHTML = "单元格" + (x + 1) + "-" + (y + 1);
+                    tdNode.innerHTML = x + "," + y;
                 }
             }
-            document.getElementById("div1").appendChild(tableNode);//添加到那个位置  
+            document.getElementById("div1").appendChild(tableNode);//添加到那个位置 
 
+            
             function find_way(map, x, y, x2, y2) {
                 var d = document.getElementById('find');//通过id获取div节点对象
                 var way = [];
@@ -63,7 +64,7 @@
                         y1;
                     var room = map[x][y].split("");
                     if (x == x2 && y == y2) {
-                        flag_way.push([x, y]);
+                        // flag_way.push([x, y]);
                         if (way.length == 0) {
                             way = flag_way.slice();
                         }
@@ -120,6 +121,7 @@
                                 y1 = y - 1;
                             }
                             if (flag_map[x1][y1]) {
+
                                 maze(map, x1, y1, x2, y2);
                             }
                             // 寻找下个出口 清除 way 最后的一个坐标
@@ -127,8 +129,10 @@
                             flag_map[x][y] = true;
                         }
                     }
+
                 }
                 maze(map, x, y, x2, y2);
+
                 for (var i = 0; i < way.length; i++) {
                     way2.push(way[i].join(","))
                 }
