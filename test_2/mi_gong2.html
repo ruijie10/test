@@ -65,10 +65,10 @@
                     if (x == x2 && y == y2) {
                         flag_way.push([x, y]);
                         if (way.length == 0) {
-                            way = flag_way;
+                            way = flag_way.slice();
                         }
                         else if (flag_way.length < way.length) {
-                            way = flag_way;
+                            way = flag_way.slice();
                         }
                         return;
                     }
