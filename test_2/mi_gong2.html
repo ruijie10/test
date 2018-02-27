@@ -45,7 +45,13 @@
             }
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置 
 
-            
+            var tbl = document.getElementById("div1").childNodes[0].childNodes[0];
+            // var table = document.getElementById("table");
+            // // 行数
+            // var a = table.rows.length;
+            // // 列数
+            // var b = table.rows[0].cells.length;
+
             function find_way(map, x, y, x2, y2) {
                 var d = document.getElementById('find');//通过id获取div节点对象
                 var way = [];
