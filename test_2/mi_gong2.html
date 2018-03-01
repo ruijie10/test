@@ -8,168 +8,73 @@
     <title>迷宫最佳路径</title>
     <!-- <script src="./mi_gong2.js"></script> -->
     <script src="./generate_map2.js"></script>
+    <script src="./find_way.js"></script>
     <script src="../jquery-3.2.1.js"></script>
     <style type="text/css">
         table {
-            /* border: #f7fafa solid 2px; */
+            /* border: #f7fafa solid 1px; */
             border-collapse: collapse;
         }
 
         td {
-            padding: 15px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            /* padding: 20px; */
         }
     </style>
     <script type="text/javascript"> 
-
+        var tpm = 0;
         function button() {
-            var a = document.getElementById("row1").value;
-            var b = document.getElementById("row1").value;
-            for (var x = 0; x <= a; x++) {
-                var tr = $("<tr></tr>");
-                $("#mytable").append(tr);
+            if (tpm == 0) {
+                tpm=1;
+                var a = document.getElementById("row1").value;
+                var b = document.getElementById("cols1").value;
+                for (var x = 0; x <= a; x++) {
+                    var tr = $("<tr></tr>");
+                    $("#mytable").append(tr);
+                    for (var y = 0; y <= b; y++) {
+                        var td = $("<td id=" + x + '-' + y + " class=" + x + "-" + y + "></td>");
+                        tr.append(td);
+                    }
+                }
+                $('td').css("border", "3px solid red");
+                $('td').css("border-bottom", "1px dotted");
+                $('td').css("border-top", "1px dotted");
                 for (var y = 0; y <= b; y++) {
-                    var td = $("<td id=" + x + '-' + y + " class=" + x + "-" + y + "></td>");
-                    tr.append(td);
-                }
-            }
-            $('td').css("border", "3px solid red");
-
-            // $('' + x + '-' + y + '').css("border-bottom-style", "none");
-            $('td').css("border-bottom", "none");
-            $('td').css("border-top", "none");
-            for (var y = 0; y <= b; y++) {
-                var d1 = '#' + '0' + '-' + y
-                var d2 = '#' + a + '-' + y
-
-                $(d1).css("border-top", '3px solid red');
-                $(d2).css("border-bottom", "3px solid red");
-                // $(d4).css("border-right", "none");
-                if (y == 0) {
-                    $(d2).css("border-right", "none");
-                }
-                if (y == b) {
-                    $(d2).css("border-left", "none");
-                }
-                if (y == b && y % 2 == 0) {
-                    $(d1).css("border-left", 'none');
-                }
-                if (y > 0 && y < b && y % 2 != 0) {
-                    $(d1).css("border-right", "none");
-                }
-                if (y > 0 && y < b && y % 2 == 0) {
-                    $(d1).css("border-left", 'none');
-                }
-                if (y > 0 && y < b) {
-                    var d3 = '#' + a + '-' + y
-                    $(d3).css("border-left", 'none');
-                    $(d3).css("border-right", "none");
-                }
-            }
-            function find_way(map, x, y, x2, y2) {
-                var d = document.getElementById('find');//通过id获取div节点对象
-                var way = [];
-                var flag = 0;
-                var way2 = [];
-                var flag_way = [];
-                var flag_map = new Array();
-                for (var i = 0; i <= map.length; i++) {
-                    flag_map[i] = new Array();
-                    for (var j = 0; j <= map[0].length; j++) {
-                        flag_map[i][j] = true;
+                    var d1 = '#' + '0' + '-' + y
+                    var d2 = '#' + a + '-' + y
+                    $(d1).css("border-top", '3px solid red');
+                    $(d2).css("border-bottom", "3px solid red");
+                    if (y == 0) {
+                        $(d2).css("border-right", "1px dotted");
+                    }
+                    if (y == b) {
+                        $(d2).css("border-left", "1px dotted");
+                    }
+                    if (y == b && y % 2 == 0) {
+                        $(d1).css("border-left", '1px dotted');
+                    }
+                    if (y > 0 && y < b && y % 2 != 0) {
+                        $(d1).css("border-right", "1px dotted");
+                    }
+                    if (y > 0 && y < b && y % 2 == 0) {
+                        $(d1).css("border-left", '1px dotted');
+                    }
+                    if (y > 0 && y < b) {
+                        var d3 = '#' + a + '-' + y
+                        $(d3).css("border-left", '1px dotted');
+                        $(d3).css("border-right", "1px dotted");
                     }
                 }
-                function maze(map, x, y, x2, y2) {
-                    var x1,
-                        y1;
-                    var room = map[x][y].split("");
-                    if (x == x2 && y == y2) {
-                        // flag_way.push([x, y]);
-                        // flag_map[x][y] = false;
-                        if (way.length == 0) {
-                            way = flag_way.slice();
-                        }
-                        else if (flag_way.length < way.length) {
-                            way = flag_way.slice();
-                        }
-                        return;
-                    }
-                    for (var i = 0; i < room.length; i++) {
-                        // 选择一个出口。
-                        if (room[i] == 1) {
-                            // 路径保存在 way 中。
-                            flag_way.push([x, y]);
-                            flag_map[x][y] = false;
-                            // 判断行走方向。
-                            // 上
-                            if (i == 0) {
-                                x1 = x - 1;
-                                y1 = y;
-                            }
-                            // 右上
-                            else if (i == 1) {
-                                x1 = x - 1;
-                                y1 = y + 1;
-                            }
-                            // 右
-                            else if (i == 2) {
-                                x1 = x;
-                                y1 = y + 1;
-                            }
-                            // 右下
-                            else if (i == 3) {
-                                x1 = x + 1;
-                                y1 = y + 1;
-                            }
-                            // 下
-                            else if (i == 4) {
-                                x1 = x + 1;
-                                y1 = y;
-                            }
-                            // 左下
-                            else if (i == 5) {
-                                x1 = x + 1;
-                                y1 = y - 1;
-                            }
-                            // 左
-                            else if (i == 6) {
-                                x1 = x;
-                                y1 = y - 1;
-                            }
-                            // 左上
-                            else if (i == 7) {
-                                x1 = x - 1;
-                                y1 = y - 1;
-                            }
-                            if (flag_map[x1][y1]) {
-
-                                maze(map, x1, y1, x2, y2);
-                            }
-                            // 寻找下个出口 清除 way 最后的一个坐标
-                            flag_way.pop();
-                            flag_map[x][y] = true;
-                        }
-                    }
-                    
-                }
-                
-                maze(map, x, y, x2, y2);
-
-
-                for (var i = 0; i < way.length; i++) {
-                    var dd = "#" + way[i].join("-")
-                    $(dd).html(i);
-
-                }
-
-                // for (var i = 0; i < way.length; i++) {
-                //     way2.push(way[i].join("-"))
-                // }
-
-                // d.innerHTML = d.innerHTML + "(" + way2.join(") -> (") + ")";
+                find_way(generate_map(a, b), 0, 0, a, b);
+            } else {
+                $('#mytable').empty();
+                tpm = 0;
+                button()
             }
-            find_way(generate_map(a, b), 0, 0, a, b);
-
         }
+
     </script>
 </head>
 
@@ -178,7 +83,7 @@
         行:
         <input type="text" id="row1" /> 列:
         <input type="text" id="cols1" />
-        <input type="button" value="创建表格" onclick="button()" />
+        <input type="button" value="迷宫" onclick="button()" />
     </form>
     <br/>
     <div id="div1">
