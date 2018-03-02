@@ -5,20 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>最大的和</title>
     <script src="./max.js"></script>
     <script src="../jquery-3.2.1.js"></script>
     <style>
-        #mun {
+        input {
             line-height: 5;
+        }
+        div{
+            margin: 20px;
+            padding: 20px;
         }
     </style>
 
 </head>
 
 <body>
+    一窜数字：
     <input type="text" id="mun" size="60">
+    加号个数：
+    <input type="text" id="plus" >
+
     <input type="button" id='sub' value="确定" onclick="button()">
+    <br>
+    <div id="add">
+        <h3>插入"+"号最大的和:</h3>
+        <p id='number'></p>
+    </div>
 </body>
 
 </html>
