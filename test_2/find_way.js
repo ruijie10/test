@@ -16,7 +16,7 @@ function find_way(map, x, y, x2, y2) {
             y1;
         var room = map[x][y].split("");
         if (x == x2 && y == y2) {
-            // flag_way.push([x, y]);
+            flag_way.push([x, y]);
             // flag_map[x][y] = false;
             if (way.length == 0) {
                 way = flag_way.slice();
@@ -24,6 +24,7 @@ function find_way(map, x, y, x2, y2) {
             else if (flag_way.length < way.length) {
                 way = flag_way.slice();
             }
+            flag_way.pop();
             return;
         }
         for (var i = 0; i < room.length; i++) {
