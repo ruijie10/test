@@ -4,7 +4,7 @@ function button(m, n) {
     var arr_mun = [];
     var flag_mun = [];
     var plus = 0;
-    for (let i = 0; i < m.length - 1; i++) {
+    for (var i = 0; i < m.length - 1; i++) {
         flag_mun[i] = true;
     }
     if (m.length <= n) {
@@ -12,30 +12,31 @@ function button(m, n) {
         return;
     }
     function add(m, k) {
-        for (let i = 0; i < m.length - 1; i++) {
+        for (var i = 0; i < m.length - 1; i++) {
             if (flag_mun[i] && k <= n) {
                 arr_mun.push(i);
-                for (let x = 0; x <= i; x++) {
+                for (var x = 0; x <= i; x++) {
                     flag_mun[x] = false;
                 }
                 add(m, k + 1)
                 arr_mun.pop()
-                for (let y = m.length - 2; y > i; y--) {
+                for (var y = m.length - 2; y > i; y--) {
                     flag_mun[y] = true;
                 }
             }
         }
         if (arr_mun.length == n) {
             var b = 0;
-            var a;
+            var a = 0;
             var c = '';
-            for (let j = 0; j < arr_mun.length; j++) {
+            var d = 0;
+            for (var j = 0; j < n; j++) {
                 a = arr_mun[j]
-                if (j < arr_mun.length - 1) {
-                    c += (m.slice(j, a + 1)) + '+';
-                    b += parseInt(m.slice(j, a + 1))
-                } else {
-                    c += (m.slice(a)) + ' ='
+                c += (m.slice(d, a + 1)) + '+';
+                b += parseInt(m.slice(d, a + 1))
+                d += m.slice(d, a + 1).length;
+                if (j == n - 1) {
+                    c = c + (m.slice(a + 1)) + '=';
                 }
             }
             b += parseInt(m.slice(a));
@@ -49,4 +50,4 @@ function button(m, n) {
     console.log('\n');
     console.log("最大和：" + plus);
 }
-button('1234567', 4)
+button('1234567890', 5)
