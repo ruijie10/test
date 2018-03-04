@@ -1,6 +1,6 @@
-function button(m, n) {
-    // var m = document.getElementById("mun").value;
-    // var n = parseInt(document.getElementById("plus").value)
+function button() {
+    var m = document.getElementById("mun").value;
+    var n = parseInt(document.getElementById("plus").value)
     var arr_mun = [];
     var flag_mun = [];
     var plus = 0;
@@ -8,10 +8,9 @@ function button(m, n) {
         flag_mun[i] = true;
     }
     if (m.length <= n) {
-        console.log("无最大和");
-        return ;
+        $("#add").html("无最大和");
+        return;
     }
-
     function add(m, k) {
         for (var i = 0; i < m.length - 1; i++) {
             if (flag_mun[i] && k <= n) {
@@ -38,12 +37,9 @@ function button(m, n) {
             if (plus < b) {
                 plus = b;
             }
-            console.log(b, arr_mun);
         }
     }
     add(m, 1)
-    console.log('\n');
-    console.log('\n');
-    console.log("最大和：" + plus);
+    $("#add").html("最大和：" + plus);
 }
-button('1234567', 4)
+button()
