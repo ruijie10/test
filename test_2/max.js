@@ -39,7 +39,7 @@ function button(m, n) {
                     c = c + (m.slice(a + 1)) + '=';
                 }
             }
-            b += parseInt(m.slice(a));
+            b += parseInt(m.slice(a+1));
             if (plus < b) {
                 plus = b;
             }
@@ -50,4 +50,4 @@ function button(m, n) {
     console.log('\n');
     console.log("最大和：" + plus);
 }
-button('1234567890', 5)
+button('12345', 3)
