@@ -50,4 +50,4 @@ function button(m, n) {
     console.log('\n');
     console.log("最大和：" + plus);
 }
-button('12345', 3)
+button('54321', 3)
