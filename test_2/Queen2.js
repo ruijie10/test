@@ -10,9 +10,11 @@ function queen_map(n) {
             map_flag[[i]][j] = true;
         }
     }
+
     function queen(x) {// x 为每一层 
         var temp_ijs = [];
         if (x == n) {
+
             a += 1;
             finish_flag = true;
             // console.log(queen_arr)
@@ -58,6 +60,10 @@ function queen_map(n) {
         }
     }
     queen(0)
-    console.log('一共有：' + a + '个')
+    if (n == 1) {
+        console.log('只有一个')
+    } else {
+        console.log('一共有：' + a + '个')
+    }
 }
-queen_map(8)
+queen_map(2)
