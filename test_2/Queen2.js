@@ -10,11 +10,9 @@ function queen_map(n) {
             map_flag[[i]][j] = true;
         }
     }
-
     function queen(x) {// x 为每一层 
         var temp_ijs = [];
         if (x == n) {
-
             a += 1;
             finish_flag = true;
             // console.log(queen_arr)
@@ -31,9 +29,7 @@ function queen_map(n) {
                         map_flag[i][y] = false;
                     }
                 }
-
                 // 左斜下方标记
-
                 for (let i = x, j = y; i < n && j >= 0; i++ , j--) {
                     if (map_flag[i][j] == true) {
                         temp_ijs.push([i, j])//当前做变更的标记坐标 true ==> flase
@@ -60,10 +56,10 @@ function queen_map(n) {
         }
     }
     queen(0)
-    if (n == 1) {
-        console.log('只有一个')
-    } else {
-        console.log('一共有：' + a + '个')
-    }
+    console.log(n + '皇后一共有：' + a + '个')
 }
-queen_map(2)
+for (let i = 1; i <= 10; i++) {
+    queen_map(i)
+}
+
+
