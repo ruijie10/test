@@ -56,10 +56,11 @@ function queen_map(n) {
         }
     }
     queen(0)
-    console.log(n + '皇后一共有：' + a + '个')
+    return a;
+    // console.log(n + '皇后一共有：' + a + '个')
 }
-for (let i = 1; i <= 10; i++) {
-    queen_map(i)
-}
+// for (let i = 1; i <= 10; i++) {
+// queen_map(8)
+// }
 
-
+module.exports = queen_map;

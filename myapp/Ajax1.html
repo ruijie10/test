@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>请求文本</title>
+</head>
+
+<body>
+    <button id="button">请求文本</button>
+    <br>
+    <br>
+    <div id="text"></div>
+
+    <script>
+        document.getElementById('button').addEventListener("click", loadtext);
+        function loadtext() {
+
+            console.log('Hello World')
+            //    创建 XMLHttpRequest 对象；
+            var xhr = new XMLHttpRequest();
+            // opn(type请求的类型 get/post,   url/file 请求的地址，async 是否异步 )
+            xhr.open('GET', 'Ajax.txt', true);
+
+            console.log('READYSTATE:', xhr.readyState)
+
+
+            xhr.onprogress = function () {
+                console.log('READYSTATE:', xhr.readyState)
+            }
+
+            // 两种方法请求 onload / onreadystatechange,
+            xhr.onload = function () {
+
+                console.log('READYSTATE:', xhr.readyState)
+
+                document.getElementById('text').innerHTML = this.responseText;
+
+            }
+            xhr.send();
+        }
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
