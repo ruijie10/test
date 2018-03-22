@@ -52,7 +52,6 @@ var querystring = require('querystring');//解析如‘a=1&b=2’为对象
 app.post('/queen3', function (req, res) {
     // console.log(JSON.stringify(req.body));
     var n = req.body.name
-    console.log('n===' + n)
     var arr = {};
     for (let i = 1; i <= n; i++) {
         arr[" " + i + " "] = queen(i)
