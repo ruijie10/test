@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <form method="post" action='/queen3？id=3' > -->
+    <!-- 其中enctype="multipart/form-data"是必须的 enctype="multipart/form-data"-->
+    <input type="text" id='input_text'>
+    <button id="button">确定</button>
+    <!-- </form> -->
+    <div id='da_an'></div>
+    <script>
+        $(document).ready(function () {
+            $('#button').click(function () {
+                var txt = $("#input_text").val();
+                console.log(txt)
+                $.ajax({
+                    type: "POST",
+                    url: 'http://127.0.0.1:3000/queen3',
+                    data: { 'name': txt },
+                    cache: false,
+                    dataType: "json"
+                }).done(function (queen_json) {
+                    var queen = ''
+                    for (var k in queen_json) {
+                        queen += k + ':' + queen_json[k] + '<br>'
+
+                    }
+                    console.log(queen)
+                    $("#da_an").html(queen);
+                });
+            })
+        });
+
+
+    </script>
+</body>
+
+</html>

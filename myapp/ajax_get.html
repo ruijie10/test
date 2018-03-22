@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id='input_text'>
+    <button id='submit'>提交</button>
+    <div id='da_an'></div>
+    <script>
+        $(document).ready(function () {
+            $("#submit").click(function () {
+                var n = $("#input_text").val();
+                $.ajax({
+                    
+                    url: 'http://127.0.0.1:3000/queen2?n=' + n,
+                    cache: false,
+                    dataType: "json"
+
+                }).done(function (queen_json) {
+                    var queen = ''
+                    for (var k in queen_json) {
+                        queen += k + ':' + queen_json[k] + '<br>'
+
+                    }
+                    $("#da_an").html(queen);
+                });
+            })
+        });
+
+
+    </script>
+</body>
+
+</html>
