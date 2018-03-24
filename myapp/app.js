@@ -2,12 +2,9 @@ var express = require('express');
 var queen = require('/Users/liruijie/Code/test/test_2/Queen2');
 var app = express();
 
-var bodyParser = require('body-parser');
-var server = require('http').createServer(app);
-app.use(bodyParser.json({ limit: '1mb' }));  //body-parser 解析json格式数据
-app.use(bodyParser.urlencoded({            //此项必须在 bodyParser.json 下面,为参数编码
-    extended: true
-}));
+// var bodyParser = require('body-parser');
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
 
 function ruijiesend(res, arr) {
     // res.header('Content-Type', 'application/json;charset=utf-8');
@@ -46,12 +43,10 @@ app.get('/queen2', function (req, res) {
     // res.json(arr)
 });
 
-var url = require("url");//解析url为对象
-var querystring = require('querystring');//解析如‘a=1&b=2’为对象
-
 app.post('/queen3', function (req, res) {
-    // console.log(JSON.stringify(req.body));
+    console.log(req.body)
     var n = req.body.name
+    console.log(n)
     var arr = {};
     for (let i = 1; i <= n; i++) {
         arr[" " + i + " "] = queen(i)
@@ -59,11 +54,22 @@ app.post('/queen3', function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
-    res.header("X-Powered-By", ' 3.2.1')
-    res.header("Content-Type", "application/json;charset=utf-8");
-
     res.json(arr)
 });
+
+app.post('/user/signup/:name', function (req, res) {
+    var n = req.params.name;
+    var x = req.param('name')
+    console.log('n==' + n)
+    console.log('x==' + x)
+    res.send(n)
+})
+// app.post('/user?name=tobi', function (req, res) {
+//     var n = req.param('name');
+//     console.log('n==' + n)
+//     res.send(n)
+// })
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 });
+
