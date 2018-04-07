@@ -4,6 +4,13 @@
     color: #424242;
     font-family: ariail;
 }
+ul{
+    list-style:none;
+}
+ul li{
+    float: left;
+    margin: 0 10px;
+}
 .list-item a{
     text-decoration: none;
     font-size: 10px;
@@ -32,13 +39,8 @@
     background-color: #f4f4f4;
  }
 .content ul{
-    list-style:none;
     position: relative;
     top: 15%;
-}
-.list-item{
-    float: left;
-    margin: 0 10px;
 }
 .nav2{
     float: right;
@@ -47,7 +49,6 @@
     color: #f40;
 }
 .content2{
-    
     margin: 0 auto;
     width: 1190px;
     height: 120px;
@@ -61,11 +62,7 @@
     margin-left: 60px;
     padding-top: 2.5%;
 }
-.content2 .logo .inp ul{
-    list-style:none;
-}
 .content2 .logo .inp ul li{
-    float: left;
     margin: 0 5px;
     font-size: 10px
 }
@@ -93,13 +90,9 @@
     margin-right: 70px;
     background: #f40
 }
-.daohang .timao ul{
-    list-style:none;
-}
+
 .daohang .timao ul li{
     color: #fff;
-    float: left;
-    margin: 0 10px;
     margin-top: 2px;
    
 }
@@ -120,11 +113,10 @@
 }
 .fennei ul {
     margin-left: 40px;
-    list-style:none;
 }
 .fennei ul li{
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 .fennei ul li a{
     color: #666;
@@ -135,7 +127,7 @@
 .tao_img{
     width: 688px;
 }
-.zhuy div{
+.zhuy .zhuy1{
     float: left;
 }
 .img3 ,
@@ -144,4 +136,23 @@
     margin-top: 20px;
     margin-left: 11px;
 }
+.log_in{
+    width: 270px;
+    text-align: center;
+}
+.log_in ul{
+    margin-left: 10px;
+}
+
+.log_in .tex2 .jingao{
+    overflow: auto;
+     zoom: 1;
+}
+.log_in img{
+        margin-left: auto; 
+        margin-right:auto; 
+        display:block;
+}
+
+
 
