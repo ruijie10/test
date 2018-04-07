@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #424242;
+    font-family: ariail;
+}
+.list-item a{
+    text-decoration: none;
+    font-size: 10px;
+}
+.firstdiv_1{
+    width: 100%;
+    background-color: #f5f5f5
+}
+.firstdiv_2{
+    width: 100%;
+}
+.firstdiv_3{
+    width: 100%;
+    background-color: #f4f4f4;
+}
+.content{
+   margin: 0 auto;
+   width: 1190px;
+   height: 35px;
+   background-color: #f5f5f5
+}
+
+ .content3{
+    margin: 0 auto;
+    width: 1190px;
+    background-color: #f4f4f4;
+ }
+.content ul{
+    list-style:none;
+    position: relative;
+    top: 15%;
+}
+.list-item{
+    float: left;
+    margin: 0 10px;
+}
+.nav2{
+    float: right;
+}
+.list-item a:hover{
+    color: #f40;
+}
+.content2{
+    
+    margin: 0 auto;
+    width: 1190px;
+    height: 120px;
+ }
+.content2 .logo .taobao{
+    width: 142px;
+    height: 60px;
+}
+.content2 .logo{
+    float: left;
+    margin-left: 60px;
+    padding-top: 2.5%;
+}
+.content2 .logo .inp ul{
+    list-style:none;
+}
+.content2 .logo .inp ul li{
+    float: left;
+    margin: 0 5px;
+    font-size: 10px
+}
+.content2 .logo .inp .text{
+    height:30px;
+    width:580px;
+}
+.content2 .logo .erw {
+    width: 60px; 
+    height: 60px;
+}
+.content2 .logo .inp .seach{
+    width: 40px;
+    height: 30px;
+}
+.content2 .logo .inp ul #gd{
+    float: right;
+}
+.content2 .logo .inp ul li:hover{
+    color: #f40;
+}
+.daohang .zhuti h3{
+    color: #fff;
+    margin-left: 70px;
+    margin-right: 70px;
+    background: #f40
+}
+.daohang .timao ul{
+    list-style:none;
+}
+.daohang .timao ul li{
+    color: #fff;
+    float: left;
+    margin: 0 10px;
+    margin-top: 2px;
+   
+}
+.daohang div{
+    float: left;
+    height: 30px;
+}
+.daohang{
+    height: 30px;
+    width: 1190px;
+    background: #f40
+}
+.fennei{
+    width: 215px;
+    border:1px solid #f40;
+    background: #fff;
+
+}
+.fennei ul {
+    margin-left: 40px;
+    list-style:none;
+}
+.fennei ul li{
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.fennei ul li a{
+    color: #666;
+}
+.fennei ul li a:hover{
+    color: #f40;
+}
+.tao_img{
+    width: 688px;
+}
+.zhuy div{
+    float: left;
+}
+.img3 ,
+.img4 ,
+.img5{
+    margin-top: 20px;
+    margin-left: 11px;
+}
+
