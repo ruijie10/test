@@ -22,7 +22,11 @@ a{text-decoration: none;}
     width: 100%;
     background-color: #f5f5f5
 }
-#firstdiv2{widows: 1440px; background-color:#fff;}
+/* .firstdiv_2{ 
+    width: 1440px;
+    background-color:rgb(238, 11, 11); 
+    border-style: solid;
+} */
 
 .firstdiv_3{
     width: 100%;
@@ -101,17 +105,16 @@ a{text-decoration: none;}
     background: #f40
 }
 .fennei{
-    width: 215px;
+    width: 210px;
     border:1px solid #f40;
     background: #fff;
-    margin-right: 5px;
+    margin-right: 10px;
     text-align: center;
 }
 .fennei p{
-    margin-top: 12px;
-    margin-bottom: 6px;
+    margin-top: 11.5px;
+    margin-bottom: 11px;
     color:#6C6C6C;
-    /* background: red; */
 }
 .fennei p a{
     color:#6C6C6C;
@@ -122,7 +125,7 @@ float: right;
 margin-right: 5px;
 color: #6C6C6C;
 }
-.tao_img{width: 688px;}
+.tao_img{width: 688px; background-color: #fff;}
 .zhuy .zhuy1{float: left;}
 .img_warp1 img{
     float: left;
@@ -136,6 +139,7 @@ color: #6C6C6C;
 }
 .img_warp3{float: left;}
 .img_warp4 {float: right;}
+
 .img_div .tianmao_log{
     background: url(data:image/png;base64,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);
     background-repeat: no-repeat;
@@ -192,20 +196,139 @@ color:floralwhite;
     border-color: transparent transparent transparent #f40;
 }
 
-.forum{margin-top:10px;}
+.forum{margin-top:15px;}
 .forum a{
 margin-left: 25px;
 font-size: 10px;
 }
-.forum-5 {margin-top:10px;}
+.forum-5 {margin-top:12px;}
 .forum-5 a{
     font-size: 1px; 
     margin-left: 13px;
 }
 .forum-5 div{
     display: none;
+    padding: 5px;
 }
 .forum a:hover{ color: #f40;}
 .forum-5 a:hover{ color: #f40;}
-
-
+.forum-5 div p {
+    padding: 2px;
+}
+.tubi{
+    margin-left: 5px;
+    margin-top: 15px;
+    padding: 3px;
+}
+.tubi ul li{
+    padding-top: 10px;
+    border: 1px ;
+    margin: 0;
+    margin: 1px;
+}
+.tubi ul li {
+    width: 65px;
+    height: 70px;
+    text-align: center;
+    background-color: #fff;
+}
+.tubi ul li a span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-top: 11px;
+    background-repeat: no-repeat;
+    background:url(https://img.alicdn.com/tfs/TB1tyFSXm_I8KJjy0FoXXaFnVXa-48-1194.png);
+    background-size: 24px;
+}
+#tubi-u1-2 span{background-position: 0 -46px;}
+#tubi-u1-3 span{background-position: 0 -90px;}
+#tubi-u1-4 span{background-position: 0 -136px;}
+#tubi-u2-1 span{background-position: 0 -175px;}
+#tubi-u2-2 span{background-position: 0 -221px;}
+#tubi-u2-3 span{background-position: 0 -267px;}
+#tubi-u2-4 span{background-position: 0 -313px;}
+#tubi-u3-1 span{background-position: 0 -352px;}
+#tubi-u3-2 span{background-position: 0 -398px;}
+#tubi-u3-3 span{background-position: 0 28px;}
+#tubi-u3-4 span{background-position: 0 116px;}
+.tubi ul li a p{
+    font-size: 12px;
+    margin: 2px;
+    padding: 2PX;
+}
+/* .fen-nei-1{
+width: 686px;
+height: 518px;
+border: 1px solid;
+display: none;
+} */
+.tou-tiao{
+    width: 880px;
+    border: 1px solid;
+    float: left;
+    background: #fff;
+    margin-top: 10px;
+    padding: 14px 14px 12px 20px;
+    background-size: 129px 26px;
+    background-image: url(https://img.alicdn.com/tfs/TB1x3nNX6uhSKJjSspmXXcQDpXa-258-52.png);
+    background-repeat: no-repeat;
+    background-position: 14px;
+}
+.tou-tiao span{
+    width: 175px;
+    float: left;
+    margin-top: 60px;
+    margin-bottom: 13px;
+    font-size: 10px;
+}
+.tou-tiao .new1:hover h1{
+    color: #f40;
+}
+.tou-tiao .new1 h1{
+    font-size: 16px;
+}
+.tou-tiao .new1 p{
+    font-size: 14px;
+    margin-top: 5px;
+}
+.tou-tiao .new1 img{
+    float: left;
+    margin-right: 10px;
+}
+.tou-tiao .new1{
+    height: 70px;
+    overflow:hidden;
+}
+.apps{
+    margin-left: 10px;
+}
+.apps ul li {
+    margin-top: 17px;
+    margin-left: 10px;
+} 
+.apps ul li a img{
+    width: 30px;
+    height: 30px;
+}
+.app-aa .all p {
+    font-size: 10px;
+    margin-left: 14px;
+}
+.app-aa .all p a{
+    float: right;
+}
+.app-aa{
+    margin-top: 10px;
+    width: 270px;
+    height: 95px;
+    float: right;
+    background-color: #fff;
+}
+.sh-hu{
+    width: 1190px;
+    height: 1000px;
+    border: solid;
+    clear:both;
+    background-color: #fff;
+}
