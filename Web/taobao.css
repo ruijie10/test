@@ -386,7 +386,6 @@ padding: 0px;
     margin-left: 20px;
 }
 .youhuo{
-    width: 49.5%;
     height: 700px;
     background: #fff;
     float: left;
@@ -428,3 +427,69 @@ padding: 0px;
 }
 
 
+
+
+/* .fennei .ca-dan1:hover.cd-list{
+    display: block;
+} */
+
+.cd-list{
+    width: 691px;
+    height: 512px;
+    background: #fff;
+    position: absolute;
+    left: 340px;
+    top: 186px;
+    border: 2px solid #f40;
+    /* display: none; */
+}
+.cd-list .cd-div{
+    width: 420px;
+    padding-bottom: 10px;
+}
+.cd-list h3  .cd-1{
+    font-size: 16px;
+    margin-left: 10px;
+}
+.cd-list h3 .cd-2{
+float: right;
+font-size: 12px;
+}
+.cd-list p{
+    font-size: 10px;
+    color: #666;
+    margin-left: 10px;
+    margin-bottom: 9px;
+
+}
+.cd-list p a{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.cd-list h3 {
+    padding: 15px;
+}
+.cd-list p a span{
+    color: #f40;
+}
+.cd-left{
+    float: left;
+}
+.cd-right{
+    float: right;
+    width: 270px;
+    height: 510px;
+    border-left: 0.1px solid #666;
+    /* background: #f40; */
+}
+.cd-right a img{
+    height: 100px;
+    width: 100px;
+    border: 1px solid;
+    margin-left: 3px;
+}
+.cd-right div{
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 20px;
+}
