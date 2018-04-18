@@ -429,9 +429,9 @@ padding: 0px;
 
 
 
-/* .fennei .ca-dan1:hover.cd-list{
-    display: block;
-} */
+/* .cd-list{
+    display: none;
+}  */
 
 .cd-list{
     width: 691px;
@@ -441,7 +441,7 @@ padding: 0px;
     left: 340px;
     top: 186px;
     border: 2px solid #f40;
-    /* display: none; */
+    display: none;
 }
 .cd-list .cd-div{
     width: 420px;
@@ -485,7 +485,7 @@ font-size: 12px;
 .cd-right a img{
     height: 100px;
     width: 100px;
-    border: 1px solid;
+    /* border: 1px solid; */
     margin-left: 3px;
 }
 .cd-right div{
@@ -493,3 +493,5 @@ font-size: 12px;
     margin-left: 20px;
     margin-top: 20px;
 }
+.zhuy>.fennei>.ca-dan1:hover+.cd-list{display: block;}
+.cd-list:hover{display: block;}
