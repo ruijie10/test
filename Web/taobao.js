@@ -1,7 +1,6 @@
 window.onload = function () {
     var aimg = document.getElementsByClassName("imga"),
         bimg = document.getElementsByClassName("imgb")
-    console.log(bimg)
     var num = 0;
     var num2 = 0;
     var flag = 0;
@@ -86,16 +85,27 @@ window.onload = function () {
         });
     });
 
-    $(function () {
-        $(".tb-fl").hover(function () {
-            $(this).css("background", "#ffb86c");
-            // $(".cd-list").css("display", "block")
-        }, function () {
-            $(this).css("background", "#fff");
-            // $(".cd-list").css("display", "none")
+    // $(function () {
+    //     $(".tb-fl").hover(function () {
+    //         // $(this).css("background", "#ffb86c");
+    //         var id = $(this).val('for')
+    //         console.log(id)
+    //         $('#' + id).css("display", "block")
+    //     }, function () {
+    //         $(this).css("background", "#fff");
+    //         // $(".cd-list").css("display", "none")
+    //     }
+    //     );
+    // });
+    $.mixhover(
+        '#fl-cd p',
+        '#xia-la div',
+        function (trg, drop) {
+            $(drop).show();
+        },
+        function (trg, drop) {
+            $(drop).hide();
         }
-        );
-    });
+    )
 
-   
 }
