@@ -330,8 +330,7 @@ display: none;
 }
 .sh-hu{
     width: 1190px;
-    height: 1000px;
-    border: solid;
+    overflow: hidden;
     clear:both;
 }
 .life{
@@ -392,7 +391,7 @@ padding: 0px;
     float: left;
     margin-top: 10px;
     padding: 10px;
-    border-bottom: 1px solid;
+    /* border-bottom: 1px solid; */
 }
 .youhuo a{
     float: left;
@@ -427,13 +426,6 @@ padding: 0px;
 .youhuo .commodity img{
     width: 100%;
 }
-
-
-
-
-/* .cd-list{
-    display: none;
-}  */
 
 .cd-list{
     width: 696px;
@@ -497,3 +489,86 @@ font-size: 12px;
 }
 /* .zhuy>.fennei>.ca-dan1:hover+.cd-list{display: block;}
 .cd-list:hover{display: block;} */
+.tqg a img{
+    float: left;
+    height: 22px;
+}
+.tqg p{
+    float: right;
+    font-size: 12px;
+}
+.tqg{
+    width: 1190px;
+    overflow: hidden;
+    margin-top: 20px;
+
+}
+
+.qiang{
+    background: #fff;
+}
+.img-p{
+    overflow: hidden;
+    margin-top: 10px;
+}
+.img-p li{
+    width: 390px;
+    margin-left: 3px;
+    margin-right:0 ;
+}
+.img-p li:hover .p-right h4 {color: #f40;}
+.img-p li:hover .img-left img {border: 1px solid #f40;}
+.qiang .img-left{
+float: left;
+   
+}
+.qiang .p-right h4{
+margin: 10px;
+
+}
+.qiang .p-right p{
+    font-size: 8px;
+
+}
+.qiang .p-right {
+    float: left;
+    width: 196px;
+    padding: 5px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.img-p li .t-max{
+    width: 180px;
+    height: 10px;
+    background: rgb(255, 217, 0);
+    border-radius:25px;
+    -moz-border-radius:25px; 
+}
+.img-p li .t-min{
+    width: 32px;
+    height: 10px;
+    background:#f40;
+    border-radius:25px;
+    -moz-border-radius:25px; 
+}
+.p-right p {margin-top: 10px;}
+.p-right p span{color: #f40;}
+.p-right p .span2{float: right;}
+.daole .yuan {
+    margin-left: 20px;
+    font-size: 12px;
+    color: #ff5000;
+}
+.daole .qian{
+    font-size: 20px;
+    color: #ff5000;
+}
+.daole .mali{
+    font-size: 10px;
+    color: #999;
+    margin-left: 6px;
+    text-decoration: line-through;
+}
+.img-p li a .pp-right{
+margin-bottom: 45px;
+}

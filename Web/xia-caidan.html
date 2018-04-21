@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="../jquery-3.2.1.js"></script>
+    <script src="maxhover.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .div1{
+        float: left;
+    }
+    #nav li {
+        width: 200px;
+        border: 1px solid;
+    }
+
+    #drop ul {
+        display: none;
+        width: 200px;
+        border: 1px solid;
+        float: left;
+    }
+</style>
+
+
+<body>
+    <div class="div1">
+        <ul id="nav">
+            <li>菜单1</li>
+            <li>菜单2</li>
+            <li>菜单3</li>
+        </ul>
+    </div>
+
+    <div id="drop">
+        <ul>
+            <li>菜单1-下拉项</li>
+        </ul>
+        <ul>
+            <li>菜单2-下拉项</li>
+        </ul>
+        <ul>
+            <li>菜单3-下拉项</li>
+        </ul>
+    </div>
+
+    <script>
+        // $(function () {
+        $.mixhover(
+            '#nav li',
+            '#drop ul',
+            function (trg, drop) {
+                $(drop).show();
+            },
+            function (trg, drop) {
+                $(drop).hide();
+            }
+        )
+        // });
+
+    </script>
+</body>
+
+</html>

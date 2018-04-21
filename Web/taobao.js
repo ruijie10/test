@@ -87,23 +87,24 @@ window.onload = function () {
 
     // $(function () {
     //     $(".tb-fl").hover(function () {
-    //         // $(this).css("background", "#ffb86c");
-    //         var id = $(this).val('for')
-    //         console.log(id)
+    //          id = $(this).attr('for')
+    //         $(this).css("background", "#ffb86c");
     //         $('#' + id).css("display", "block")
     //     }, function () {
     //         $(this).css("background", "#fff");
-    //         // $(".cd-list").css("display", "none")
+    //         $('#' + id).css("display", "none")
     //     }
     //     );
     // });
-    $.mixhover(
+    $.mixhover(                //需要引用 mixhover.js .
         '#fl-cd p',
-        '#xia-la div',
+        '#xia-la .cd-list',
         function (trg, drop) {
+            $(trg).css("background", "#ffb86c");
             $(drop).show();
         },
         function (trg, drop) {
+            $(trg).css("background", "#fff");
             $(drop).hide();
         }
     )
