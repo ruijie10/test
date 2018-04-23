@@ -572,3 +572,93 @@ margin: 10px;
 .img-p li a .pp-right{
 margin-bottom: 45px;
 }
+
+.youhuo2{
+    overflow: hidden;
+    /* width: 575px; */
+    /* height: 700px; */
+    background: #fff;
+    float: left;
+    margin-top: 10px;
+    padding: 15px;
+    /* border: 1px solid; */
+}
+.youhuo3 {
+    margin-left: 10px;
+}
+.tao-dp1{
+    width: 280px;
+    /* overflow: hidden; */
+    height: 226px;
+    float: left;
+    /* border: 1px solid; */
+}
+.tao-dp2{
+    float: left;
+}
+.tao-dp2 img{
+    width: 180px;
+    height: 180px;
+    /* border: 1px solid; */
+}
+.tao-dp3 .dp-img img{
+    width: 89px;
+    height: 89px;
+    /* border: 1px solid; */
+}
+.dp-right{
+    float: right;
+
+}
+.dp-a div img:hover{
+    border: 1px solid #f40;
+}
+
+.dp-a{
+    margin-top: 10px;
+}
+.tao-dp1 p{
+    margin-top: 10px;
+}
+.tao-dp1 p span{
+    font-size: 10px;
+}
+.tao-dp{
+    margin-top: 5px;
+}
+.bian-g{
+    /* width: 280px;
+    height: 236px; */
+    overflow: hidden;
+    padding:20px;
+    border:1px solid #fff;
+    background: #fff;
+}
+.bian-g:hover{
+    border:1px solid #f40;
+}
+.ssbl ul{
+  margin-top: 10px;
+  /* border: 1px solid; */
+  background: #fff;
+}
+.ssbl ul li{
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 2px;
+    background: #fff;
+}
+.ssbl ul li h1{
+    color: rgb(69, 6, 243);
+    padding: 5px;
+}
+.bian-img{
+    padding: 20px;
+    margin-left: 20px;
+}
+.bian-img img {
+    width: 260px;
+    height: 240px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
