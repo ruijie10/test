@@ -108,5 +108,32 @@ window.onload = function () {
             $(drop).hide();
         }
     )
+    $("#tianmao").click(function () {
+        $(this).css("background", "#f40");
+        $(this).css("color", " #fff")
+        $('#baobei').css("background", "#fff");
+        $('#baobei').css("color", "#f40")
+        $('#dianpu').css("background", "#fff");
+        $('#dianpu').css("color", "#f40")
+        $('.baob').css("display", "none")
+    });
+    $("#baobei").click(function () {
+        $(this).css("background", "#f40");
+        $(this).css("color", " #fff")
+        $('#tianmao').css("background", "#fff");
+        $('#tianmao').css("color", "#f40")
+        $('#dianpu').css("background", "#fff");
+        $('#dianpu').css("color", "#f40")
+        $('.baob').css("display", "block")
+    });
+    $("#dianpu").click(function () {
+        $(this).css("background", "#f40");
+        $(this).css("color", " #fff")
+        $('#baobei').css("background", "#fff");
+        $('#baobei').css("color", "#f40")
+        $('#tianmao').css("background", "#fff");
+        $('#tianmao').css("color", "#f40")
+        $('.baob').css("display", "block")
+    });
 
 }
