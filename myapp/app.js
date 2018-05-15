@@ -1,5 +1,5 @@
 var express = require('express');
-var queen = require('/Users/liruijie/Code/test/test_2/Queen2');
+var queen = require('/Users/liruijie/Code/test/xiao-cx/Queen2');
 var app = express();
 
 // var bodyParser = require('body-parser');

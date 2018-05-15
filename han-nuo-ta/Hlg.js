@@ -11,4 +11,4 @@ var hlg = function (num, a, b, c) {
     }
 }
 
-hlg(3, "A", "B", "C")
+hlg(4, "A", "B", "C")

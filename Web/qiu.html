@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <canvas id="myCanvas"></canvas>
+
+    <script type="text/javascript">
+        var canvas = document.getElementById('myCanvas');
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        canvas.width = w;
+        canvas.height = h;
+        window.onresize = function () {
+            w = window.innerWidth;
+            h = window.innerHeight;
+            canvas.width = w;
+            canvas.height = h;
+        }
+        var canCon = canvas.getContext("2d");
+        var y = 100;
+        setInterval(function () {
+            canCon.clearRect(0, 0, w, h);
+            canCon.beginPath();
+            canCon.fillStyle = "red";
+            canCon.arc(250, y++, 100, 0, Math.PI * 2);
+            canCon.fill();
+        }, 1000 / 60)
+
+    </script>
+
+</body>
+
+</html>
