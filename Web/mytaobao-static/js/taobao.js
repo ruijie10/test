@@ -135,5 +135,11 @@ window.onload = function () {
         $('#tianmao').css("color", "#f40")
         $('.baob').css("display", "block")
     });
+    $("a").click(function () {
+        str = $(this).attr('href')
+        if (str == 'http://') {
+            alert('没有此网站，暂时无法连接')
+        }
+    })
 
 }
