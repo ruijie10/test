@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/mydate/mydate"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#aab8a3",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "微信接口功能演示",
+    "backgroundColor": "#ff5983",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#25c6fc",
+    "selectedColor": "#ff5983",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "selectedIconPath": "pages/image/a1.jpeg",
+        "iconPath": "pages/image/a1.jpeg",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "selectedIconPath": "pages/image/a2.jpg",
+        "iconPath": "pages/image/a2.jpg",
+        "text": "日志"
+      },
+      {
+        "pagePath": "pages/mydate/mydate",
+        "selectedIconPath": "pages/image/a3.jpg",
+        "iconPath": "pages/image/a3.jpg",
+        "text": "我的"
+      }
+    ]
+  }
+}
