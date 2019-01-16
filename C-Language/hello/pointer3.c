@@ -11,6 +11,5 @@ int main ()
   printf("*ip指针变量的值: %d\n", *ip );
   printf("ptr是空指针 它的地址是 %p\n", ptr  );
   printf("*sb指针变量的值: %d\n", *sb );
-  /* printf("sb在指针变量中存储的地址: %d\n", sb ); */
   return 0;
 }
